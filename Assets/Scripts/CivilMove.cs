@@ -30,54 +30,7 @@ public class CivilMove : MonoBehaviour
     }
 
     
-    public void Update()
-    {
-      
-        //transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.Clamp(transform.position.z, -5f,5f));
-        
-        /*transform.Translate(_vector3*speed*Time.deltaTime,positionToGo[0]);
-        
-        if (positionCivil.position.z >= 5)
-        {
-            _vector3 = new Vector3(0, 0, -1);
-            transform.Translate(_vector3 * speed * Time.deltaTime);
-        }
-
-        if (positionCivil.position.z <= -5)
-        {
-            _vector3 = new Vector3(0, 0, 1);
-            transform.Translate(_vector3 * speed * Time.deltaTime);
-        }*/
-
-
-        //transform.Translate(Vector3.Normalize(positionToGo[0].position - positionCivil.position)/20f);
-
-        
-
-       /* _civil.SetDestination(positionToGo[0].position);
-        
-        if (positionCivil.position == positionToGo[0].position)
-        {
-            _civil.SetDestination(positionToGo[1].position);
-        }
-        if (positionCivil.position == positionToGo[1].position)
-        {
-            _civil.SetDestination(positionToGo[2].position);
-        }
-        if (positionCivil.position == positionToGo[2].position)
-        {
-            _civil.SetDestination(positionToGo[3].position);
-        }
-        if (positionCivil.position == positionToGo[3].position)
-        {
-            _civil.SetDestination(positionToGo[0].position);
-        }*/
-
-      
-        
-
-    }
-
+   
     private void OnTriggerEnter(Collider other)
     {
         

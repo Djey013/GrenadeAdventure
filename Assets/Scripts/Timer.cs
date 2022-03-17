@@ -17,19 +17,21 @@ public class Timer : MonoBehaviour
 
     private void OnEnable()
     {
-        rotation_bonusTimer.OnChronoChange += UpdateTimer;   //déclenchera la fonction UpdateTimer 
-                                                             // si l'event se produit du coté du script "rotationBonusTimer"
+        rotation_bonusTimer.OnChronoChange += UpdateTimer;   //déclenchera la fonction UpdateTimer //si l'event se produit du coté du script "rotationBonusTimer"
+        
     }
     
     private void OnDisable()
     {
         rotation_bonusTimer.OnChronoChange -= UpdateTimer;
+        
     }
     
     
     void Update()
     {
         Clock();
+        TimeZero();
     }
 
     public void Clock()
@@ -59,6 +61,17 @@ public class Timer : MonoBehaviour
         timeRemaining += 5; // au lieu de mettre : _timer.timeRemaining = _timer.timeRemaining + 5;
     }
 
+    void TimeZero()
+    {
+        if (timeRemaining == timeUp)
+        {
+            SceneManager.LoadScene("Principal");
+        }
+        
+    }
+        
+    
+    
     
 }
 
