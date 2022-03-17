@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//script "publisher"
+
 public class rotation_bonusTimer : MonoBehaviour
 {
-
     public delegate void OnChronoChanger();
-
     public static event OnChronoChanger OnChronoChange;
     
     public Timer _timer;
@@ -25,20 +25,13 @@ public class rotation_bonusTimer : MonoBehaviour
 
      private void OnCollisionEnter(Collision other)
      {
-         
-         // _timer.timeRemaining = _timer.timeRemaining + 5;
          popUpMessage.SetActive(true);
          popUpMessage.GetComponent<Text>().text = messageLog;
          
-         
-         
-         OnChronoChange?.Invoke();
-         
-         
+         OnChronoChange?.Invoke();   //invoke la fonction UpdateTimer du script "Timer" s'il y a une collision
          
          StartCoroutine(MessageFade());
-                 
-
+         
      }
      
      private IEnumerator MessageFade()

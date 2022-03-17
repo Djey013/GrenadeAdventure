@@ -2,20 +2,31 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 
 public class Timer : MonoBehaviour
 {
+    
+    
     public float timeRemaining = 60f;
     public float timeUp = 0f;
     public Text TimerBoard;
 
-    private void Start()
+    private void OnEnable()
     {
-        rotation_bonusTimer.OnChronoChange += UpdateTimer;
+        rotation_bonusTimer.OnChronoChange += UpdateTimer;   //déclenchera la fonction UpdateTimer 
+                                                             // si l'event se produit du coté du script "rotationBonusTimer"
     }
-
+    
+    private void OnDisable()
+    {
+        rotation_bonusTimer.OnChronoChange -= UpdateTimer;
+    }
+    
+    
     void Update()
     {
         Clock();
@@ -45,6 +56,10 @@ public class Timer : MonoBehaviour
 
     void UpdateTimer()
     {
-        timeRemaining += 5;
+        timeRemaining += 5; // au lieu de mettre : _timer.timeRemaining = _timer.timeRemaining + 5;
     }
+
+    
 }
+
+
