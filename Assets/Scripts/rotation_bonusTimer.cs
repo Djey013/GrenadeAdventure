@@ -28,7 +28,7 @@ public class rotation_bonusTimer : MonoBehaviour
          popUpMessage.SetActive(true);
          popUpMessage.GetComponent<Text>().text = messageLog;
          
-         OnChronoChange?.Invoke();   //invoke la fonction UpdateTimer du script "Timer" s'il y a une collision
+         OnChronoChange?.Invoke();   //déclenche l'event s'il y a une collision
          
          StartCoroutine(MessageFade());
          
