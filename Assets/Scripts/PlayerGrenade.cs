@@ -10,44 +10,74 @@ public class PlayerGrenade : MonoBehaviour
     public float grenadeSpeed = 0;
     public float jump = 50;
 
+    private void OnEnable()
+    {
+        EventManager.MoveUp += GrenadeUp;
+        EventManager.MoveDown += GrenadeDown;
+        EventManager.MoveRight += GrenadeRight;
+        EventManager.MoveLeft += GrenadeLeft;
+        EventManager.Jump += GrenadeJump;
+           
+    }
+
+    private void OnDisable()
+    {
+        EventManager.MoveUp -= GrenadeUp;
+        EventManager.MoveDown -= GrenadeDown;
+        EventManager.MoveRight -= GrenadeRight;
+        EventManager.MoveLeft -= GrenadeLeft;
+        EventManager.Jump -= GrenadeJump;
+        
+    }
+
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    void FixedUpdate()
-    {
-        GrenadeMoves();
-    }
 
-
-    public void GrenadeMoves()
+    public void GrenadeUp()
     {
         if (Input.GetKey(KeyCode.Z))
         {
             rb.AddForce(0,0,grenadeSpeed);
         }
-        
+    }
+    
+    public void GrenadeDown()
+    {
         if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(0,0,-grenadeSpeed);
         }
-        
+    }
+    
+    public void GrenadeRight()
+    {
         if (Input.GetKey(KeyCode.D))
         {
             rb.AddForce(grenadeSpeed,0,0);
         }
-        
+    }
+    
+    public void GrenadeLeft()
+    {
         if (Input.GetKey(KeyCode.Q))
         {
             rb.AddForce(-grenadeSpeed,0,0);
         }
-        
+    }
+    
+    public void GrenadeJump()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("je saute");
             rb.AddForce(0,5*jump,0);
         }
-        
     }
+    
+    
+    
 }
