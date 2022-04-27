@@ -41,7 +41,7 @@ public class PlayerGrenade : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Z))
         {
-            rb.AddForce(0,0,grenadeSpeed);
+            rb.AddForce(0,0,grenadeSpeed * Time.deltaTime);
         }
     }
     
@@ -49,7 +49,7 @@ public class PlayerGrenade : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.S))
         {
-            rb.AddForce(0,0,-grenadeSpeed);
+            rb.AddForce(0,0,-grenadeSpeed * Time.deltaTime);
         }
     }
     
@@ -57,7 +57,7 @@ public class PlayerGrenade : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.D))
         {
-            rb.AddForce(grenadeSpeed,0,0);
+            rb.AddForce(grenadeSpeed * Time.deltaTime,0,0);
         }
     }
     
@@ -65,7 +65,7 @@ public class PlayerGrenade : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            rb.AddForce(-grenadeSpeed,0,0);
+            rb.AddForce(-grenadeSpeed * Time.deltaTime,0,0);
         }
     }
     
