@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8659746784855364034}
   - component: {fileID: 8659746784855364035}
   m_Layer: 0
-  m_Name: DirtySign 1
+  m_Name: Sign_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
