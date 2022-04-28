@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timeRemaining = 60f;
+    public float timeRemaining = 5;
     public float timeUp = 0f;
     public Text TimerBoard;
 
