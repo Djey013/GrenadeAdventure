@@ -9,6 +9,7 @@ public class PlayerGrenade : MonoBehaviour
     private Rigidbody rb;
     public float grenadeSpeed = 0;
     public float jump = 50;
+    public bool canJump = false;
 
     private void OnEnable()
     {
@@ -34,6 +35,7 @@ public class PlayerGrenade : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
     }
 
 
@@ -69,15 +71,23 @@ public class PlayerGrenade : MonoBehaviour
         }
     }
     
-    public void GrenadeJump()
+    private void OnCollisionEnter(Collision other)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (other.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("je saute");
-            rb.AddForce(0,5*jump,0);
+            canJump = true;
         }
+        
     }
     
-    
+    public void GrenadeJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && canJump)
+        {
+            rb.AddForce(0,5*jump,0);
+            canJump = false;
+        }
+    }
+
     
 }
