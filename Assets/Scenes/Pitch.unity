@@ -193,11 +193,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Une grenade a \xE9t\xE9 lanc\xE9e dans une petite ville de l'Est afin
-    d'\xE9liminer un dictateur peu recommendable.\nCependant, les risques de dommages
-    collat\xE9raux (civils, chiens, chats etc...) sont trop grands !\n\nNotre petite
-    boule verte, d\xE9sormais repentie, va tout faire pour \xE9viter un drame et
-    rejoindre les rangs de la r\xE9sistance...\n "
+  m_Text: "Une grenade a \xE9t\xE9 lanc\xE9e dans une petite ville afin d'\xE9liminer
+    un dictateur peu recommendable.\nCependant, les risques de dommages collat\xE9raux
+    (civils, chiens, chats etc...) sont trop grands !\n\nNotre petite boule verte,
+    d\xE9sormais repentie, va tout faire pour \xE9viter un drame et rejoindre les
+    rangs de la r\xE9sistance...\n "
 --- !u!222 &42957261
 CanvasRenderer:
   m_ObjectHideFlags: 0
